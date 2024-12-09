@@ -8,3 +8,98 @@
   */
 
 /*----------- ADD YOUR CUSTOM CSS STYLES BELOW -----------*/
+
+/* Green light indicator */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  color: #FF6F61;
+}
+
+.status-indicator i {
+  font-size: 24px;
+  color: green;  /* Green color for the light */
+  margin-right: 10px;  /* Space between the icon and text */
+}
+
+.status-indicator span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+.navbar .lets-talk-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #D2B48C;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .lets-talk-button:hover {
+  background-color: #ffae00;
+  color: #001f3f; /* Dark blue text for contrast */
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Skills Section Icons */
+.skills-section .single-service {
+  display: flex;
+  align-items: center;
+  background-color: #161616;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.skills-section .single-service:hover {
+  background-color: #2a2a2a;
+}
+
+.skills-section .single-service .service-icon {
+  font-size: 36px; /* Adjust icon size */
+  color: #ffcc00; /* Icon color - customize as needed */
+  margin-right: 20px; /* Space between icon and title */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skills-section .single-service .service-title {
+  font-size: 20px;
+  color: #cecece;
+  margin: 0;
+}
+
+.skills-section .single-service .service-icon:hover {
+  animation: bounce 0.6s ease;
+  color: #ffd700; /* Slightly lighter color on hover */
+}
+
+@media (max-width: 767.98px) {
+  .skills-section .single-service {
+    padding: 16px;
+  }
+
+  .skills-section .single-service .service-icon {
+    font-size: 32px;
+    margin-right: 16px;
+  }
+
+  .skills-section .single-service .service-title {
+    font-size: 18px;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
