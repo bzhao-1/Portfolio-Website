@@ -908,6 +908,14 @@ hr {
   margin-bottom: 34px;
 }
 
+.home-area .home-subname {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
+}
+
 .home-area .home-headline {
   color: #fff;
   font-size: 32px;
