@@ -32,6 +32,8 @@ jobs:
         run: npm ci
 
       - name: Build site
+        env:
+          DEPLOY_TARGET: github-pages
         run: npm run build
 
       - name: Upload Pages artifact
