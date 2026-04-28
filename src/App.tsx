@@ -56,6 +56,8 @@ const recruiterHighlights = [
   "Distributed systems, observability, and cloud infrastructure",
 ];
 
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const experiences: ExperienceItem[] = [
   {
     title: "Software Engineer — Oracle Cloud Infrastructure (Compute VMI)",
@@ -128,11 +130,11 @@ const projects: ProjectItem[] = [
   {
     title: "Computer Vision for Autonomous Driving",
     category: "Full Stack / Computer Vision",
-    image: "/img/video_77_clear_day.gif",
+    image: withBase("/img/video_77_clear_day.gif"),
     summary:
       "Senior comps project spanning model experimentation, evaluation, and a public-facing project site.",
     links: [
-      { label: "Case Study", href: "/projects/CV4AD.pdf" },
+      { label: "Case Study", href: withBase("/projects/CV4AD.pdf") },
       { label: "Website", href: "https://www.cs.carleton.edu/cs_comps/2425/tamert/cv4ad_website/index.html" },
       { label: "Code", href: "https://github.com/Carleton-Comps-CV4AD" },
     ],
@@ -140,11 +142,11 @@ const projects: ProjectItem[] = [
   {
     title: "Portfolio Website",
     category: "Website",
-    image: "/img/port.png",
+    image: withBase("/img/port.png"),
     summary:
       "Personal website for sharing engineering work, consulting, and project experience.",
     links: [
-      { label: "PDF", href: "/projects/portfolio.pdf" },
+      { label: "PDF", href: withBase("/projects/portfolio.pdf") },
       { label: "Live Site", href: "https://zehoubenzhao.com" },
       { label: "Code", href: "https://github.com/bzhao-1/Portfolio-Website" },
     ],
@@ -152,66 +154,66 @@ const projects: ProjectItem[] = [
   {
     title: "Wordle Clone Cloud Application",
     category: "Full Stack",
-    image: "/img/wordle.jpg",
+    image: withBase("/img/wordle.jpg"),
     summary:
       "Cloud-backed Wordle clone with game logic, full-stack flows, and deployable application structure.",
     links: [
-      { label: "PDF", href: "/projects/Wordle.pdf" },
+      { label: "PDF", href: withBase("/projects/Wordle.pdf") },
       { label: "Code", href: "https://github.com/bzhao-1/WordleClone" },
     ],
   },
   {
     title: "Frontage Inventory Automation",
     category: "Data Analytics",
-    image: "/img/frontage.jpeg",
+    image: withBase("/img/frontage.jpeg"),
     summary:
       "Operational data automation work that streamlined inventory tracking for research workflows.",
     links: [
-      { label: "PDF", href: "/projects/Frontage.pdf" },
+      { label: "PDF", href: withBase("/projects/Frontage.pdf") },
       { label: "Code", href: "https://github.com/bzhao-1/Inventory-Data-Management-System" },
     ],
   },
   {
     title: "Cahai Website",
     category: "Website",
-    image: "/img/cahai.png",
+    image: withBase("/img/cahai.png"),
     summary:
       "Nonprofit web platform and workflow management work focused on usability and local engagement.",
     links: [
-      { label: "PDF", href: "/projects/InfoCahai.pdf" },
+      { label: "PDF", href: withBase("/projects/InfoCahai.pdf") },
       { label: "Website", href: "https://www.cahai.org" },
     ],
   },
   {
     title: "Carleton Athletics Analytics",
     category: "Data Analytics",
-    image: "/img/carleton.jpeg",
+    image: withBase("/img/carleton.jpeg"),
     summary:
       "Analytics project for athlete tracking and reporting built around practical coaching needs.",
     links: [
-      { label: "PDF", href: "/projects/Carleton.pdf" },
+      { label: "PDF", href: withBase("/projects/Carleton.pdf") },
       { label: "Code", href: "https://github.com/bzhao-1/Carleton-College-Athletics-Data-Tracking-" },
     ],
   },
   {
     title: "Computational Biology Publication",
     category: "Research",
-    image: "/img/pub.png",
+    image: withBase("/img/pub.png"),
     summary:
       "Published research modeling the integrin adhesion code using bipartite graph methods in R.",
     links: [
-      { label: "PDF", href: "/projects/Research.pdf" },
+      { label: "PDF", href: withBase("/projects/Research.pdf") },
       { label: "Publication", href: "https://faseb.onlinelibrary.wiley.com/doi/10.1096/fasebj.2021.35.S1.03962" },
     ],
   },
   {
     title: "High Blood Pressure Predictor",
     category: "Full Stack",
-    image: "/img/hbp.png",
+    image: withBase("/img/hbp.png"),
     summary:
       "Full-stack application exploring predictive modeling and user-facing health data workflows.",
     links: [
-      { label: "PDF", href: "/projects/highbp.docx.pdf" },
+      { label: "PDF", href: withBase("/projects/highbp.docx.pdf") },
       { label: "Code", href: "https://github.com/bzhao-1/CS257-HighBloodPressurePredictor.git" },
     ],
   },
@@ -221,7 +223,7 @@ const testimonials: TestimonialItem[] = [
   {
     name: "Zakariya Mobarak",
     company: "NCR Atleos",
-    image: "/img/zak.jpeg",
+    image: withBase("/img/zak.jpeg"),
     href: "https://www.linkedin.com/in/zak-mob/",
     summary:
       "Zak credited our prep rounds for helping him navigate a competitive SWE market and land multiple interviews and offers.",
@@ -229,7 +231,7 @@ const testimonials: TestimonialItem[] = [
   {
     name: "Ntense Obono",
     company: "Amazon",
-    image: "/img/ntense.jpeg",
+    image: withBase("/img/ntense.jpeg"),
     href: "https://www.linkedin.com/in/ntenseobono/",
     summary:
       "Mock technical interview prep helped Ntense convert a final round into an Amazon SDE internship offer.",
@@ -237,7 +239,7 @@ const testimonials: TestimonialItem[] = [
   {
     name: "Viraaj Veeramachaneni",
     company: "Verizon",
-    image: "/img/vv.jpeg",
+    image: withBase("/img/vv.jpeg"),
     href: "https://www.linkedin.com/in/viraajveeramachaneni/",
     summary:
       "Behavioral and technical interview practice led to multiple offers, including Verizon.",
@@ -245,7 +247,7 @@ const testimonials: TestimonialItem[] = [
   {
     name: "Elias Venetis",
     company: "Oracle",
-    image: "/img/ev.jpeg",
+    image: withBase("/img/ev.jpeg"),
     href: "https://www.linkedin.com/in/elias-venetis-04851b1b5/",
     summary:
       "Former client and Carleton alum who landed an Oracle SDR role after multiple mock interview sessions.",
@@ -253,7 +255,7 @@ const testimonials: TestimonialItem[] = [
   {
     name: "Bemnet Abebayehu",
     company: "Walmart Global Tech",
-    image: "/img/ba.jpeg",
+    image: withBase("/img/ba.jpeg"),
     href: "https://www.linkedin.com/in/bemnet-abebayehu/",
     summary:
       "Technical interview prep helped Bemnet land Walmart Global Tech and return for full-time work.",
@@ -261,7 +263,7 @@ const testimonials: TestimonialItem[] = [
   {
     name: "Nolan Lwin",
     company: "Stifel Financial",
-    image: "/img/NL.jpeg",
+    image: withBase("/img/NL.jpeg"),
     href: "https://www.linkedin.com/in/nolan-lwin/",
     summary:
       "Mock interviewing support helped Nolan secure a software engineering internship offer.",
@@ -298,7 +300,7 @@ const beyondWork = [
   {
     title: "Rugby",
     description: "Team sport and community in Austin with the Blacks; I enjoy training and competing.",
-    image: "/img/austin_blacks.JPEG",
+    image: withBase("/img/austin_blacks.JPEG"),
     href: undefined,
     icon: Trophy,
   },
@@ -312,7 +314,7 @@ const beyondWork = [
   {
     title: "Football",
     description: "Former four-year NCAA D3 starter; I bring that discipline to engineering.",
-    image: "/img/football.JPG",
+    image: withBase("/img/football.JPG"),
     href: "http://www.hudl.com/v/2JtXNT",
     icon: ShieldCheck,
   },
@@ -340,7 +342,7 @@ function App() {
             </a>
           ))}
         </nav>
-        <a className="button button-primary" href="/resume/resume.pdf" target="_blank" rel="noreferrer">
+        <a className="button button-primary" href={withBase("/resume/resume.pdf")} target="_blank" rel="noreferrer">
           Resume
         </a>
       </header>
@@ -375,7 +377,7 @@ function App() {
 
           <aside className="hero-panel">
             <div className="profile-card">
-              <img className="profile-photo" src="/img/benzhao.jpg" alt="Ben Zhao headshot" />
+              <img className="profile-photo" src={withBase("/img/benzhao.jpg")} alt="Ben Zhao headshot" />
               <div className="profile-meta">
                 <h2>Ben Zhao</h2>
                 <p>Software Engineer | Distributed Systems & Cloud Infrastructure</p>
@@ -658,7 +660,7 @@ function App() {
               description="Leadership roles and team responsibilities I have taken on outside the classroom and workplace."
             />
             <article className="leadership-card">
-              <img src="/img/rfc.jpeg" alt="Carleton Rugby Club" loading="lazy" />
+              <img src={withBase("/img/rfc.jpeg")} alt="Carleton Rugby Club" loading="lazy" />
               <div className="leadership-card__body">
                 <h3>Carleton Rugby Club</h3>
                 <p className="experience-meta">VP • Forwards Captain • Treasurer</p>
