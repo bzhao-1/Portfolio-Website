@@ -284,19 +284,26 @@
     /*----------  Resume: Skills  ----------*/
 
     ifExists('#resume .skills-section', function() {
-      var initPercentageElement = function() {
-        $('#resume .skills-section .single-skill').each(function() {
-          var percentage = Math.min(100, Math.max(0, $(this).data('percentage')));
-          var barWidth = $(this).find('.skill-progress').outerWidth(true);
-          var percentageElementOffset = barWidth - (barWidth * (percentage / 100));
-          $(this).find('.skill-percentage').text(percentage + '%').css('margin-right', percentageElementOffset);
-          $(this).find('.progress-bar').attr('aria-valuenow', percentage).css('width', percentage + '%');
-        });
-      }
-      initPercentageElement();
-      $(window).on('resize', function() {
-        initPercentageElement();
+      var filters = $('#resume .skills-cloud-filters .skill-filter');
+      var chips = $('#resume .skills-cloud .skill-chip');
+
+      chips.each(function(index) {
+        $(this).css('--lane', index % 5);
       });
+
+      var applyFilter = function(activeFilter) {
+        filters.removeClass('is-active');
+        filters.filter('[data-filter="' + activeFilter + '"]').addClass('is-active');
+        chips.each(function() {
+          var group = $(this).attr('data-group');
+          var shouldShow = activeFilter === 'all' || group === activeFilter;
+          $(this).toggleClass('is-filtered-out', !shouldShow);
+        });
+      };
+      $(document).on('click', '#resume .skills-cloud-filters .skill-filter', function() {
+        applyFilter($(this).attr('data-filter'));
+      });
+      applyFilter('all');
     });
 
     /*----------  Portfolio: Portfolio  ----------*/
