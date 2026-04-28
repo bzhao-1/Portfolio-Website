@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig(({ command }) => ({
+export default defineConfig(() => ({
   plugins: [react()],
-  base: command === "serve" ? "/" : "/Portfolio-Website/",
+  base: process.env.DEPLOY_TARGET === "github-pages" ? "/Portfolio-Website/" : "/",
   build: {
     target: "es2020",
     cssCodeSplit: false,
