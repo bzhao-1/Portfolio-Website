@@ -2,18 +2,14 @@ import { useState } from "react";
 import {
   ArrowUpRight,
   BriefcaseBusiness,
-  Cloud,
-  Code2,
   Dumbbell,
   GitBranch,
   GraduationCap,
-  Layers3,
   Link2,
   Mail,
   MapPin,
   Play,
   ShieldCheck,
-  Sparkles,
   Trophy,
 } from "lucide-react";
 
@@ -30,16 +26,9 @@ type ProjectItem = {
   title: string;
   category: string;
   image: string;
+  imageAlt: string;
   summary: string;
   links: Array<{ label: string; href: string }>;
-};
-
-type TestimonialItem = {
-  name: string;
-  company: string;
-  image: string;
-  summary: string;
-  href: string;
 };
 
 const navItems = [
@@ -47,13 +36,6 @@ const navItems = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Consulting", href: "#consulting" },
-];
-
-const recruiterHighlights = [
-  "OCI Compute VMI engineer focused on production-safe deployments",
-  "Austin-based, open to SWE I / SWE II opportunities",
-  "Distributed systems, observability, and cloud infrastructure",
 ];
 
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
@@ -63,11 +45,12 @@ const experiences: ExperienceItem[] = [
     title: "Software Engineer — Oracle Cloud Infrastructure (Compute VMI)",
     meta: "Austin, TX | July 2025 - Present",
     summary:
-      "Working on OCI Compute dataplane infrastructure across security pipelines, validation systems, and fleet-wide production readiness.",
+      "Building production validation, release, and security systems for OCI Compute dataplane infrastructure.",
     bullets: [
-      "Designed and deployed a distributed security data pipeline aggregating vulnerability signals across 10k+ hypervisors and 100k+ VMs per month, enabling fleet-wide analysis and automated remediation workflows.",
-      "Built a long-running VM validation stage to catch stability regressions in active instances that launch-only testing missed.",
-      "Transformed a pre-deployment validation tool into a scalable multi-repository validation service supporting parallel execution of 200+ test suites before production rollout.",
+      "Rebuilt a pre-deployment validation tool into a multi-repository service that runs 200+ stable test suites before OCI Compute production rollouts.",
+      "Designed and implemented a long-running VM validation stage to catch stability regressions on active instances that launch-only testing missed.",
+      "Built a fleet-wide security data pipeline ingesting, correlating, and reporting vulnerability signals across 10k+ hypervisors and 100k+ VMs per month.",
+      "Automated triage and remediation workflows for hundreds of monthly security findings, reducing manual investigation and improving fleet-wide pattern analysis.",
     ],
   },
   {
@@ -76,7 +59,7 @@ const experiences: ExperienceItem[] = [
     summary:
       "Built observability and performance tooling for OCI Object Storage replication services.",
     bullets: [
-      "Developed a metrics pipeline ingesting 50+ tenant-level replication and copy-service signals for network and latency analysis.",
+      "Designed and deployed a metrics pipeline ingesting 50+ tenant-level replication and copy-service signals for network and latency analysis.",
       "Authored 50+ MQL-based monitors to isolate replication and networking issues, reducing fault localization time by about 40%.",
       "Improved observability for distributed replication workflows and made client-facing diagnostics more actionable.",
     ],
@@ -87,9 +70,9 @@ const experiences: ExperienceItem[] = [
     summary:
       "Developed automation for hardware reliability in OCI data centers.",
     bullets: [
-      "Built a real-time PSU fault detection system that reduced mean detection time by about 60%.",
+      "Built a real-time PSU fault detection system that reduced mean detection time by about 60% and supported live repair services.",
       "Verified fault scenarios across 3+ hardware generations, supporting migration to non-terminating VM repair models.",
-      "Helped move hardware reliability workflows closer to production-ready repair pipelines.",
+      "Moved hardware reliability workflows closer to production repair pipelines for OCI infrastructure operations.",
     ],
   },
   {
@@ -129,10 +112,11 @@ const experiences: ExperienceItem[] = [
 const projects: ProjectItem[] = [
   {
     title: "Computer Vision for Autonomous Driving",
-    category: "Full Stack / Computer Vision",
+    category: "Systems Research",
     image: withBase("/img/video_77_clear_day.gif"),
+    imageAlt: "Autonomous driving semantic segmentation output from a CARLA simulation",
     summary:
-      "Senior comps project spanning model experimentation, evaluation, and a public-facing project site.",
+      "Built large-scale evaluation pipelines for 1M+ CARLA simulation samples, trained HRNetV2 segmentation models in PyTorch, and measured robustness under domain shift.",
     links: [
       { label: "Case Study", href: withBase("/projects/CV4AD.pdf") },
       { label: "Website", href: "https://www.cs.carleton.edu/cs_comps/2425/tamert/cv4ad_website/index.html" },
@@ -140,133 +124,37 @@ const projects: ProjectItem[] = [
     ],
   },
   {
-    title: "Portfolio Website",
-    category: "Website",
-    image: withBase("/img/port.png"),
-    summary:
-      "Personal website for sharing engineering work, consulting, and project experience.",
-    links: [
-      { label: "PDF", href: withBase("/projects/portfolio.pdf") },
-      { label: "Live Site", href: "https://zehoubenzhao.com" },
-      { label: "Code", href: "https://github.com/bzhao-1/Portfolio-Website" },
-    ],
-  },
-  {
-    title: "Wordle Clone Cloud Application",
-    category: "Full Stack",
-    image: withBase("/img/wordle.jpg"),
-    summary:
-      "Cloud-backed Wordle clone with game logic, full-stack flows, and deployable application structure.",
-    links: [
-      { label: "PDF", href: withBase("/projects/Wordle.pdf") },
-      { label: "Code", href: "https://github.com/bzhao-1/WordleClone" },
-    ],
-  },
-  {
     title: "Frontage Inventory Automation",
-    category: "Data Analytics",
+    category: "Data Pipeline",
     image: withBase("/img/frontage.jpeg"),
+    imageAlt: "Frontage Laboratories inventory automation project graphic",
     summary:
-      "Operational data automation work that streamlined inventory tracking for research workflows.",
+      "Built Python data automation for 300+ instrument inventories, replacing manual tracking with structured operational workflows for research teams.",
     links: [
       { label: "PDF", href: withBase("/projects/Frontage.pdf") },
       { label: "Code", href: "https://github.com/bzhao-1/Inventory-Data-Management-System" },
     ],
   },
   {
-    title: "Cahai Website",
-    category: "Website",
-    image: withBase("/img/cahai.png"),
-    summary:
-      "Nonprofit web platform and workflow management work focused on usability and local engagement.",
-    links: [
-      { label: "PDF", href: withBase("/projects/InfoCahai.pdf") },
-      { label: "Website", href: "https://www.cahai.org" },
-    ],
-  },
-  {
-    title: "Carleton Athletics Analytics",
-    category: "Data Analytics",
-    image: withBase("/img/carleton.jpeg"),
-    summary:
-      "Analytics project for athlete tracking and reporting built around practical coaching needs.",
-    links: [
-      { label: "PDF", href: withBase("/projects/Carleton.pdf") },
-      { label: "Code", href: "https://github.com/bzhao-1/Carleton-College-Athletics-Data-Tracking-" },
-    ],
-  },
-  {
     title: "Computational Biology Publication",
-    category: "Research",
+    category: "Data Systems",
     image: withBase("/img/pub.png"),
+    imageAlt: "Computational biology publication graphic",
     summary:
-      "Published research modeling the integrin adhesion code using bipartite graph methods in R.",
+      "Designed an analysis workflow in R to model integrin adhesion relationships with bipartite graphs and produce publication-ready experimental results.",
     links: [
       { label: "PDF", href: withBase("/projects/Research.pdf") },
       { label: "Publication", href: "https://faseb.onlinelibrary.wiley.com/doi/10.1096/fasebj.2021.35.S1.03962" },
     ],
   },
   {
-    title: "High Blood Pressure Predictor",
-    category: "Full Stack",
-    image: withBase("/img/hbp.png"),
+    title: "Scheme Interpreter",
+    category: "Systems",
+    image: withBase("/img/scheme-interpreter-diagram.png"),
+    imageAlt: "Abstract diagram representing a Scheme interpreter runtime",
     summary:
-      "Full-stack application exploring predictive modeling and user-facing health data workflows.",
-    links: [
-      { label: "PDF", href: withBase("/projects/highbp.docx.pdf") },
-      { label: "Code", href: "https://github.com/bzhao-1/CS257-HighBloodPressurePredictor.git" },
-    ],
-  },
-];
-
-const testimonials: TestimonialItem[] = [
-  {
-    name: "Zakariya Mobarak",
-    company: "NCR Atleos",
-    image: withBase("/img/zak.jpeg"),
-    href: "https://www.linkedin.com/in/zak-mob/",
-    summary:
-      "Zak credited our prep rounds for helping him navigate a competitive SWE market and land multiple interviews and offers.",
-  },
-  {
-    name: "Ntense Obono",
-    company: "Amazon",
-    image: withBase("/img/ntense.jpeg"),
-    href: "https://www.linkedin.com/in/ntenseobono/",
-    summary:
-      "Mock technical interview prep helped Ntense convert a final round into an Amazon SDE internship offer.",
-  },
-  {
-    name: "Viraaj Veeramachaneni",
-    company: "Verizon",
-    image: withBase("/img/vv.jpeg"),
-    href: "https://www.linkedin.com/in/viraajveeramachaneni/",
-    summary:
-      "Behavioral and technical interview practice led to multiple offers, including Verizon.",
-  },
-  {
-    name: "Elias Venetis",
-    company: "Oracle",
-    image: withBase("/img/ev.jpeg"),
-    href: "https://www.linkedin.com/in/elias-venetis-04851b1b5/",
-    summary:
-      "Former client and Carleton alum who landed an Oracle SDR role after multiple mock interview sessions.",
-  },
-  {
-    name: "Bemnet Abebayehu",
-    company: "Walmart Global Tech",
-    image: withBase("/img/ba.jpeg"),
-    href: "https://www.linkedin.com/in/bemnet-abebayehu/",
-    summary:
-      "Technical interview prep helped Bemnet land Walmart Global Tech and return for full-time work.",
-  },
-  {
-    name: "Nolan Lwin",
-    company: "Stifel Financial",
-    image: withBase("/img/NL.jpeg"),
-    href: "https://www.linkedin.com/in/nolan-lwin/",
-    summary:
-      "Mock interviewing support helped Nolan secure a software engineering internship offer.",
+      "Implemented a Scheme interpreter with primitives and continuations to strengthen compiler, runtime, and systems-level design fundamentals.",
+    links: [],
   },
 ];
 
@@ -274,19 +162,20 @@ const skills = [
   { label: "Python", group: "languages", tone: "primary", style: { top: "12%", left: "8%", animationDelay: "0s" } },
   { label: "Java", group: "languages", tone: "primary", style: { top: "24%", left: "34%", animationDelay: "-4s" } },
   { label: "Go", group: "languages", tone: "primary", style: { top: "14%", left: "58%", animationDelay: "-8s" } },
-  { label: "Terraform", group: "infrastructure", tone: "primary", style: { top: "20%", left: "80%", animationDelay: "-12s" } },
   { label: "SQL", group: "languages", tone: "primary", style: { top: "36%", left: "20%", animationDelay: "-16s" } },
-  { label: "Distributed Systems", group: "infrastructure", tone: "infra", style: { top: "40%", left: "50%", animationDelay: "-6s" } },
-  { label: "Cloud Infrastructure", group: "infrastructure", tone: "infra", style: { top: "32%", left: "72%", animationDelay: "-10s" } },
+  { label: "Distributed Systems", group: "infrastructure", tone: "primary", style: { top: "40%", left: "50%", animationDelay: "-6s" } },
+  { label: "CI/CD", group: "infrastructure", tone: "primary", style: { top: "20%", left: "80%", animationDelay: "-12s" } },
+  { label: "Deployment Systems", group: "infrastructure", tone: "infra", style: { top: "32%", left: "72%", animationDelay: "-10s" } },
   { label: "Observability", group: "infrastructure", tone: "infra", style: { top: "56%", left: "14%", animationDelay: "-14s" } },
-  { label: "Deployment Pipelines", group: "infrastructure", tone: "infra", style: { top: "60%", left: "40%", animationDelay: "-18s" } },
+  { label: "Validation Pipelines", group: "infrastructure", tone: "infra", style: { top: "60%", left: "40%", animationDelay: "-18s" } },
+  { label: "Infrastructure Automation", group: "infrastructure", tone: "infra", style: { top: "72%", left: "58%", animationDelay: "-20s" } },
   { label: "Docker", group: "infrastructure", tone: "infra", style: { top: "74%", left: "24%", animationDelay: "-2s" } },
-  { label: "DevOps", group: "infrastructure", tone: "infra", style: { top: "72%", left: "58%", animationDelay: "-20s" } },
-  { label: "CI/CD", group: "infrastructure", tone: "infra", style: { top: "78%", left: "80%", animationDelay: "-24s" } },
-  { label: "JavaScript", group: "languages", tone: "working", style: { top: "50%", left: "84%", animationDelay: "-7s" } },
-  { label: "HTML/CSS", group: "languages", tone: "working", style: { top: "86%", left: "50%", animationDelay: "-11s" } },
+  { label: "Terraform", group: "infrastructure", tone: "infra", style: { top: "78%", left: "80%", animationDelay: "-24s" } },
+  { label: "Data Pipelines", group: "infrastructure", tone: "infra", style: { top: "50%", left: "84%", animationDelay: "-7s" } },
+  { label: "Security Tooling", group: "infrastructure", tone: "infra", style: { top: "10%", left: "92%", animationDelay: "-19s" } },
   { label: "C/C++", group: "languages", tone: "working", style: { top: "84%", left: "10%", animationDelay: "-15s" } },
-  { label: "R", group: "languages", tone: "working", style: { top: "10%", left: "92%", animationDelay: "-19s" } },
+  { label: "JavaScript", group: "languages", tone: "working", style: { top: "86%", left: "50%", animationDelay: "-11s" } },
+  { label: "R", group: "languages", tone: "working", style: { top: "88%", left: "72%", animationDelay: "-21s" } },
 ];
 
 const beyondWork = [
@@ -300,7 +189,7 @@ const beyondWork = [
   {
     title: "Rugby",
     description: "Team sport and community in Austin with the Blacks; I enjoy training and competing.",
-    image: withBase("/img/austin_blacks.JPEG"),
+    image: withBase("/img/austin-blacks-rugby.jpg"),
     href: undefined,
     icon: Trophy,
   },
@@ -314,7 +203,7 @@ const beyondWork = [
   {
     title: "Football",
     description: "Former four-year NCAA D3 starter; I bring that discipline to engineering.",
-    image: withBase("/img/football.JPG"),
+    image: withBase("/img/ben-zhao-football.jpg"),
     href: "http://www.hudl.com/v/2JtXNT",
     icon: ShieldCheck,
   },
@@ -352,18 +241,10 @@ function App() {
           <div className="hero-copy">
             <span className="eyebrow">Software Engineer | Austin, Texas</span>
             <h1>Ben Zhao</h1>
-            <p className="hero-lead">
-              I build reliable distributed systems and production deployment workflows at Oracle
-              Cloud Infrastructure, with a focus on validation, observability, and safe rollouts
-              across large fleets.
-            </p>
-            <div className="hero-highlights">
-              {recruiterHighlights.map((item) => (
-                <div key={item} className="highlight-pill">
-                  <Sparkles size={16} />
-                  <span>{item}</span>
-                </div>
-              ))}
+            <div className="hero-signal">
+              <p className="hero-lead">Software Engineer focused on cloud infrastructure and distributed systems</p>
+              <p className="hero-lead">Building deployment validation and release systems for OCI Compute at production scale</p>
+              <p className="hero-techline">Python • Java • Distributed Systems • CI/CD • Infrastructure Automation</p>
             </div>
             <div className="hero-actions">
               <a className="button button-primary" href="#experience">
@@ -377,7 +258,7 @@ function App() {
 
           <aside className="hero-panel">
             <div className="profile-card">
-              <img className="profile-photo" src={withBase("/img/benzhao.jpg")} alt="Ben Zhao headshot" />
+              <img className="profile-photo" src={withBase("/img/ben-zhao-headshot.jpg")} alt="Ben Zhao headshot" />
               <div className="profile-meta">
                 <h2>Ben Zhao</h2>
                 <p>Software Engineer | Distributed Systems & Cloud Infrastructure</p>
@@ -420,36 +301,20 @@ function App() {
             <SectionHeader
               eyebrow="About"
               title="About Me"
-              description="Software engineer focused on cloud infrastructure, distributed systems, and production reliability."
+              description="Cloud infrastructure engineer focused on production reliability, deployment safety, and distributed systems."
             />
             <div className="stack prose-card">
               <p>
-                I&apos;m a software engineer based in Austin, Texas, focused on building reliable,
-                large-scale cloud infrastructure.
+                Software engineer based in Austin, Texas, focused on reliable cloud infrastructure and distributed systems.
               </p>
               <p>
-                I currently work on the Oracle Cloud Infrastructure (OCI) Compute dataplane,
-                building hypervisor images, validation pipelines, and supporting global production
-                deployments across a distributed fleet. My work centers on infrastructure
-                reliability: ensuring images are validated and rolled out safely at scale while
-                reducing deployment risk in complex environments.
+                At Oracle Cloud Infrastructure Compute, I work on hypervisor image validation, deployment safety, release workflows, and security tooling for production systems operating across a global fleet.
               </p>
               <p>
-                Previously, I built an automated PSU fault detection system that enabled one of
-                OCI&apos;s first live hardware repair workflows. I&apos;ve also developed per-tenant
-                metrics pipelines within Object Storage to improve observability, performance
-                analysis, and root-cause clarity in distributed systems.
+                Previous OCI work includes PSU fault detection for live repair workflows and tenant-level observability pipelines for Object Storage replication services.
               </p>
               <p>
-                I graduated from Carleton College with a degree in Computer Science and was a
-                four-year varsity football starter. That experience shaped how I approach
-                engineering: disciplined, accountable, and comfortable operating under pressure.
-              </p>
-              <p>
-                I&apos;m particularly interested in resilient distributed systems, software that
-                remains stable under shifting conditions and recovers intelligently from failure.
-                I&apos;m open to new opportunities where I can continue operating close to production
-                and solving high-impact infrastructure problems.
+                I graduated from Carleton College in Computer Science, start the UT Austin MSCS program in Fall 2026, and am most interested in backend, platform, cloud infrastructure, and AI infrastructure roles.
               </p>
             </div>
           </div>
@@ -458,17 +323,17 @@ function App() {
               <div className="mini-panel">
               <h3>Focus Areas</h3>
               <ul className="mini-list">
-                <li>Hypervisor image builds and validation</li>
-                <li>Deployment safety and rollback design</li>
-                <li>Observability for distributed cloud systems</li>
+                <li>Distributed systems and backend infrastructure</li>
+                <li>Deployment validation, rollout safety, and CI/CD</li>
+                <li>Security tooling and observability at production scale</li>
               </ul>
             </div>
             <div className="mini-panel">
               <h3>Current Search</h3>
               <ul className="mini-list">
-                <li>Open to SWE I / SWE II roles</li>
-                <li>Remote, Austin, or MSP preferred</li>
-                <li>Resume and project portfolio linked below</li>
+                <li>Open to SWE I / SWE II backend, platform, and infra roles</li>
+                <li>Austin, remote, or high-scale infrastructure teams</li>
+                <li>Targeting production cloud, platform, and AI infra work</li>
               </ul>
             </div>
           </div>
@@ -478,7 +343,7 @@ function App() {
           <SectionHeader
             eyebrow="Experience"
             title="Experience"
-            description="Oracle Cloud Infrastructure work across Compute VMI, Object Storage, and earlier analytics and web roles."
+            description="Production cloud infrastructure work across OCI Compute and Object Storage, with earlier systems, data, and teaching roles."
           />
           <div className="experience-layout">
             <div className="experience-column">
@@ -512,10 +377,10 @@ function App() {
               <div className="panel-card">
                 <h3>Professional Development</h3>
                 <ul className="mini-list">
-                  <li>Coaching across football and rugby programs since 2021</li>
+                  <li>UT Austin MSCS starting Fall 2026</li>
                   <li>Computational biology publication in FASEB Journal</li>
-                  <li>Piper Sandler technology and finance exploration program</li>
                   <li>Carleton computer science course staff experience</li>
+                  <li>Four-year varsity football starter and rugby leadership experience</li>
                 </ul>
               </div>
             </aside>
@@ -526,24 +391,26 @@ function App() {
           <SectionHeader
             eyebrow="Projects"
             title="Projects"
-            description="Selected work across full-stack applications, data systems, research, and web development."
+            description="Selected systems, data, and research projects that reinforce backend, infrastructure, and large-scale engineering work."
           />
           <div className="project-grid">
             {projects.map((project) => (
               <article className="project-card" key={project.title}>
-                <img src={project.image} alt={project.title} loading="lazy" />
+                <img src={project.image} alt={project.imageAlt} loading="lazy" />
                 <div className="project-card__body">
                   <span className="project-category">{project.category}</span>
                   <h3>{project.title}</h3>
                   <p>{project.summary}</p>
-                  <div className="link-row">
-                    {project.links.map((link) => (
-                      <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                        {link.label}
-                        <ArrowUpRight size={15} />
-                      </a>
-                    ))}
-                  </div>
+                  {project.links.length > 0 ? (
+                    <div className="link-row">
+                      {project.links.map((link) => (
+                        <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                          {link.label}
+                          <ArrowUpRight size={15} />
+                        </a>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
               </article>
             ))}
@@ -555,7 +422,7 @@ function App() {
             <SectionHeader
               eyebrow="Skills"
               title="Programming Languages & Skills"
-              description="Languages, infrastructure tools, and systems work I use most often."
+              description="Languages, backend systems, infrastructure tooling, and reliability work most relevant to production platform roles."
             />
             <div className="skill-controls">
               {[
@@ -586,21 +453,33 @@ function App() {
             </div>
           </div>
 
-          <div className="aside-stack">
+            <div className="aside-stack">
             <div className="mini-panel">
-              <h3>Primary Stack</h3>
+              <h3>Languages</h3>
               <ul className="mini-list">
-                <li>Python, Java, Go, Terraform, SQL</li>
-                <li>Docker, CI/CD, deployment automation</li>
-                <li>Cloud infrastructure and observability</li>
+                <li>Python, Java, Go, SQL</li>
+                <li>C/C++ with working knowledge of JavaScript and R</li>
               </ul>
             </div>
             <div className="mini-panel">
-              <h3>Working Style</h3>
+              <h3>Backend</h3>
               <ul className="mini-list">
-                <li>Production-close, validation-heavy, rollback-aware</li>
-                <li>Prefers clear system boundaries and operational visibility</li>
-                <li>Comfortable with cross-functional engineering + operations work</li>
+                <li>APIs, distributed systems, data pipelines</li>
+                <li>Validation-heavy and production-close engineering</li>
+              </ul>
+            </div>
+            <div className="mini-panel">
+              <h3>Infrastructure</h3>
+              <ul className="mini-list">
+                <li>CI/CD, deployment systems, validation, observability</li>
+                <li>Security tooling and infrastructure automation</li>
+              </ul>
+            </div>
+            <div className="mini-panel">
+              <h3>Cloud & Testing</h3>
+              <ul className="mini-list">
+                <li>Docker, Terraform, cloud infrastructure</li>
+                <li>Automation, reliability, rollback-aware release workflows</li>
               </ul>
             </div>
           </div>
@@ -660,7 +539,7 @@ function App() {
               description="Leadership roles and team responsibilities I have taken on outside the classroom and workplace."
             />
             <article className="leadership-card">
-              <img src={withBase("/img/rfc.jpeg")} alt="Carleton Rugby Club" loading="lazy" />
+              <img src={withBase("/img/carleton-rugby-club.jpg")} alt="Carleton Rugby Club team photo" loading="lazy" />
               <div className="leadership-card__body">
                 <h3>Carleton Rugby Club</h3>
                 <p className="experience-meta">VP • Forwards Captain • Treasurer</p>
@@ -673,38 +552,6 @@ function App() {
                 <p className="impact-line">Impact: Improved team operations and player development.</p>
               </div>
             </article>
-          </div>
-
-            <div className="aside-stack">
-              <div className="mini-panel">
-              <h3>Career Services</h3>
-              <p>
-                Mock interviews, resume review, and practical recruiting prep for students and early-career candidates.
-              </p>
-              <a className="button button-secondary" href="https://calendly.com/benzhao1on1/30min?preview_source=et_card&month=2024-12" target="_blank" rel="noreferrer">
-                Schedule a Session
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section className="section" id="consulting">
-          <SectionHeader
-            eyebrow="Consulting"
-            title="Client Success Stories"
-            description="Outcomes from interview prep, technical practice, and career coaching work."
-          />
-          <div className="testimonial-grid">
-            {testimonials.map((item) => (
-              <a className="testimonial-card" href={item.href} key={item.name} target="_blank" rel="noreferrer">
-                <img src={item.image} alt={item.name} loading="lazy" />
-                <div>
-                  <h3>{item.name}</h3>
-                  <p className="experience-meta">{item.company}</p>
-                  <p>{item.summary}</p>
-                </div>
-              </a>
-            ))}
           </div>
         </section>
       </main>
