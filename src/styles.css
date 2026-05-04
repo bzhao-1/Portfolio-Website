@@ -164,6 +164,21 @@ img {
   max-width: 62ch;
 }
 
+.hero-signal {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+  max-width: 68ch;
+}
+
+.hero-techline {
+  color: #d9b15a;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
 .hero-highlights {
   display: flex;
   flex-wrap: wrap;

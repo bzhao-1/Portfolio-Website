@@ -6,6 +6,8 @@
 
 /projects/*
   Cache-Control: public, max-age=604800
+  X-Robots-Tag: noindex, noarchive
 
 /resume/*
   Cache-Control: public, max-age=604800
+  X-Robots-Tag: noindex, noarchive
