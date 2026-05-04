@@ -119,8 +119,20 @@ const projects: ProjectItem[] = [
       "Built large-scale evaluation pipelines for 1M+ CARLA simulation samples, trained HRNetV2 segmentation models in PyTorch, and measured robustness under domain shift.",
     links: [
       { label: "Case Study", href: withBase("/projects/CV4AD.pdf") },
-      { label: "Website", href: "https://www.cs.carleton.edu/cs_comps/2425/tamert/cv4ad_website/index.html" },
-      { label: "Code", href: "https://github.com/Carleton-Comps-CV4AD" },
+      { label: "Project Site", href: "https://www.cs.carleton.edu/cs_comps/2425/tamert/cv4ad_website/index.html" },
+      { label: "Repository", href: "https://github.com/Carleton-Comps-CV4AD" },
+    ],
+  },
+  {
+    title: "RoleFit Platform",
+    category: "Backend Tooling",
+    image: withBase("/img/rolefit-platform.svg"),
+    imageAlt: "Abstract dashboard graphic for the RoleFit Platform ATS ingestion and scoring system",
+    summary:
+      "Built a local Python system for ATS feed ingestion, deterministic role scoring, SQLite-backed tracking, resume matching, and DOCX export through both a CLI and a browser dashboard.",
+    links: [
+      { label: "Repository", href: "https://github.com/bzhao-1/rolefit-platform" },
+      { label: "Architecture", href: "https://github.com/bzhao-1/rolefit-platform#architecture" },
     ],
   },
   {
@@ -131,20 +143,8 @@ const projects: ProjectItem[] = [
     summary:
       "Built Python data automation for 300+ instrument inventories, replacing manual tracking with structured operational workflows for research teams.",
     links: [
-      { label: "PDF", href: withBase("/projects/Frontage.pdf") },
-      { label: "Code", href: "https://github.com/bzhao-1/Inventory-Data-Management-System" },
-    ],
-  },
-  {
-    title: "Computational Biology Publication",
-    category: "Data Systems",
-    image: withBase("/img/pub.png"),
-    imageAlt: "Computational biology publication graphic",
-    summary:
-      "Designed an analysis workflow in R to model integrin adhesion relationships with bipartite graphs and produce publication-ready experimental results.",
-    links: [
-      { label: "PDF", href: withBase("/projects/Research.pdf") },
-      { label: "Publication", href: "https://faseb.onlinelibrary.wiley.com/doi/10.1096/fasebj.2021.35.S1.03962" },
+      { label: "Case Study", href: withBase("/projects/Frontage.pdf") },
+      { label: "Repository", href: "https://github.com/bzhao-1/Inventory-Data-Management-System" },
     ],
   },
   {

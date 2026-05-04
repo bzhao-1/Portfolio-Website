@@ -80,15 +80,20 @@ img {
 .brand {
   align-items: center;
   background: linear-gradient(135deg, #f4bf55, #f0a425);
+  box-shadow: 0 10px 24px rgba(240, 164, 37, 0.26);
   border-radius: 999px;
   color: #071018;
   display: inline-flex;
-  font-size: 0.92rem;
+  flex: 0 0 auto;
+  font-size: 1rem;
   font-weight: 800;
-  height: 42px;
+  height: 46px;
   justify-content: center;
   letter-spacing: 0.08em;
-  width: 42px;
+  min-width: 46px;
+  position: relative;
+  z-index: 1;
+  width: 46px;
 }
 
 .topnav {
