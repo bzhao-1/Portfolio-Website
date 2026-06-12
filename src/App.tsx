@@ -39,6 +39,7 @@ const navItems = [
 ];
 
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+const resumeHref = withBase("/resume/resume.pdf?v=20260612");
 
 const experiences: ExperienceItem[] = [
   {
@@ -232,7 +233,7 @@ function App() {
             </a>
           ))}
         </nav>
-        <a className="button button-primary" href={withBase("/resume/resume.pdf")} target="_blank" rel="noreferrer">
+        <a className="button button-primary" href={resumeHref} target="_blank" rel="noreferrer">
           Resume
         </a>
       </header>
