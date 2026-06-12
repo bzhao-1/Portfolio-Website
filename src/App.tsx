@@ -48,15 +48,16 @@ const experiences: ExperienceItem[] = [
     summary:
       "Building release operations, validation, image hardening, and security systems for OCI Compute dataplane infrastructure.",
     bullets: [
-      "Built Release Coordinator Copilot, an AI-assisted release-operations tool that consolidates validation status, failed test evidence, rerun history, release context, and remediation guidance for virtual machine infrastructure rollouts.",
+      "Built Release Coordinator Copilot, an AI-assisted release-operations tool for virtual machine infrastructure rollouts that consolidates validation status, failed test evidence, rerun history, release context, and remediation guidance into decision-ready summaries.",
       "Built and operated deployment validation and release-gating workflows executing 200+ automated test suites across service repositories, improving confidence for production infrastructure changes.",
       "Owned hypervisor image validation for the Oracle Linux 9 migration, validating image readiness, debugging rollout failures, and mitigating production risk during the transition from Oracle Linux 8.",
-      "Built a fleet-wide security data pipeline ingesting, normalizing, correlating, and visualizing vulnerability signals across 10k+ hypervisors and 100k+ virtual machines per month.",
-      "Drove Linux image hardening and compliance remediation for federal and security-sensitive cloud environments, mapping FIPS and STIG findings to image-build changes, exception paths, validation evidence, and rollout readiness.",
+      "Built an end-to-end production security data pipeline ingesting, normalizing, correlating, and visualizing fleet-wide hypervisor vulnerability signals across 10k+ hypervisors and 100k+ virtual machines per month, with reporting used by security and leadership teams.",
+      "Drove Linux image hardening and compliance remediation for federal and security-sensitive cloud environments, mapping Federal Information Processing Standards and Security Technical Implementation Guide findings to image-build changes, exception paths, validation evidence, and rollout readiness.",
+      "Designed and implemented long-running virtual machine validation coverage for already-running instances, integrating continuous integration checks that detect stability regressions across sustained workload and update-path scenarios beyond launch-only tests.",
     ],
   },
   {
-    title: "Software Engineer Intern — Oracle",
+    title: "Software Engineer Intern — Oracle Object Storage",
     meta: "Seattle, WA | June-Aug 2024",
     summary:
       "Built observability and performance tooling for OCI Object Storage replication services.",
@@ -67,8 +68,8 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
-    title: "Software Engineer Intern — Oracle",
-    meta: "May-Aug 2023",
+    title: "Software Engineer Intern — Oracle VMI",
+    meta: "Austin, TX | May-Aug 2023",
     summary:
       "Developed automation for hardware reliability in OCI data centers.",
     bullets: [
