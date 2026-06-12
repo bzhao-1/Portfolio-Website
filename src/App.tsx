@@ -45,21 +45,22 @@ const experiences: ExperienceItem[] = [
     title: "Software Engineer — Oracle Cloud Infrastructure (Compute VMI)",
     meta: "Austin, TX | July 2025 - Present",
     summary:
-      "Building production validation, release, and security systems for OCI Compute dataplane infrastructure.",
+      "Building release operations, validation, image hardening, and security systems for OCI Compute dataplane infrastructure.",
     bullets: [
-      "Rebuilt a pre-deployment validation tool into a multi-repository service that runs 200+ stable test suites before OCI Compute production rollouts.",
-      "Designed and implemented a long-running VM validation stage to catch stability regressions on active instances that launch-only testing missed.",
-      "Built a fleet-wide security data pipeline ingesting, correlating, and reporting vulnerability signals across 10k+ hypervisors and 100k+ VMs per month.",
-      "Automated triage and remediation workflows for hundreds of monthly security findings, reducing manual investigation and improving fleet-wide pattern analysis.",
+      "Built Release Coordinator Copilot, an AI-assisted release-operations tool that consolidates validation status, failed test evidence, rerun history, release context, and remediation guidance for virtual machine infrastructure rollouts.",
+      "Built and operated deployment validation and release-gating workflows executing 200+ automated test suites across service repositories, improving confidence for production infrastructure changes.",
+      "Owned hypervisor image validation for the Oracle Linux 9 migration, validating image readiness, debugging rollout failures, and mitigating production risk during the transition from Oracle Linux 8.",
+      "Built a fleet-wide security data pipeline ingesting, normalizing, correlating, and visualizing vulnerability signals across 10k+ hypervisors and 100k+ virtual machines per month.",
+      "Drove Linux image hardening and compliance remediation for federal and security-sensitive cloud environments, mapping FIPS and STIG findings to image-build changes, exception paths, validation evidence, and rollout readiness.",
     ],
   },
   {
     title: "Software Engineer Intern — Oracle",
-    meta: "June-Aug 2024",
+    meta: "Seattle, WA | June-Aug 2024",
     summary:
       "Built observability and performance tooling for OCI Object Storage replication services.",
     bullets: [
-      "Designed and deployed a metrics pipeline ingesting 50+ tenant-level replication and copy-service signals for network and latency analysis.",
+      "Designed and deployed a metrics pipeline ingesting 50+ tenant-level object storage replication and copy-service signals for network and latency analysis.",
       "Authored 50+ MQL-based monitors to isolate replication and networking issues, reducing fault localization time by about 40%.",
       "Improved observability for distributed replication workflows and made client-facing diagnostics more actionable.",
     ],
@@ -70,13 +71,13 @@ const experiences: ExperienceItem[] = [
     summary:
       "Developed automation for hardware reliability in OCI data centers.",
     bullets: [
-      "Built a real-time PSU fault detection system that reduced mean detection time by about 60% and supported live repair services.",
+      "Built a real-time PSU fault detection system that reduced mean detection time by about 60% and enabled live repair services.",
       "Verified fault scenarios across 3+ hardware generations, supporting migration to non-terminating VM repair models.",
       "Moved hardware reliability workflows closer to production repair pipelines for OCI infrastructure operations.",
     ],
   },
   {
-    title: "Course Staff and Lab Assistant — Carleton College",
+    title: "Computer Science Course Staff and Lab Assistant — Carleton College",
     meta: "Northfield, MN | Sept 2022 - Sep 2024",
     summary:
       "Supported computer science instruction across algorithms, computer systems, and computer architecture coursework.",
