@@ -39,21 +39,22 @@ const navItems = [
 ];
 
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
-const resumeHref = withBase("/resume/resume.pdf?v=20260612");
+const resumeHref = withBase("/resume/resume.pdf?v=20260714");
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Software Engineer — Oracle Cloud Infrastructure (Compute VMI)",
+    title: "Software Engineer, OCI Compute Infrastructure",
     meta: "Austin, TX | July 2025 - Present",
     summary:
       "Building release operations, validation, image hardening, and security systems for OCI Compute dataplane infrastructure.",
     bullets: [
-      "Built Release Coordinator Copilot, an AI-assisted release-operations tool for virtual machine infrastructure rollouts that consolidates validation status, failed test evidence, rerun history, release context, and remediation guidance into decision-ready summaries.",
-      "Built and operated deployment validation and release-gating workflows executing 200+ automated test suites across service repositories, improving confidence for production infrastructure changes.",
-      "Owned hypervisor image validation for the Oracle Linux 9 migration, validating image readiness, debugging rollout failures, and mitigating production risk during the transition from Oracle Linux 8.",
-      "Built an end-to-end production security data pipeline ingesting, normalizing, correlating, and visualizing fleet-wide hypervisor vulnerability signals across 10k+ hypervisors and 100k+ virtual machines per month, with reporting used by security and leadership teams.",
-      "Drove Linux image hardening and compliance remediation for federal and security-sensitive cloud environments, mapping Federal Information Processing Standards and Security Technical Implementation Guide findings to image-build changes, exception paths, validation evidence, and rollout readiness.",
-      "Designed and implemented long-running virtual machine validation coverage for already-running instances, integrating continuous integration checks that detect stability regressions across sustained workload and update-path scenarios beyond launch-only tests.",
+      "Developed release-readiness automation through Release Coordinator Copilot to synthesize validation status, failed-test evidence, rerun history, deployment context, and remediation guidance into decision-ready rollout summaries.",
+      "Strengthened release-gating workflows coordinating 200+ automated test suites across service repositories, improving consistency and traceability of production-change reviews.",
+      "Led an automated security-patching rollout for compute infrastructure across 49 production hosts; paused the rollout after correlating validation timeouts to a faulty software update using host evidence, rollback results, and failed deployment data.",
+      "Built a fleet-security reporting pipeline producing 22 validated monthly outputs; one cycle correlated 185 remediation tickets across 100,551 hypervisors and 478,520 virtual machines.",
+      "Owned Oracle Linux 9 hypervisor-image validation, debugging rollout failures and separating product risk from test and environment noise before broader production deployment.",
+      "Translated 248 federal security-hardening findings and FIPS-readiness gaps into image-build changes, package validation, rollout evidence, and exception handling; reviewed 1,036+ packages and made 65 packages install-compatible.",
+      "Expanded continuous validation to already-running virtual machines, detecting stability regressions and software-update failures missed by launch-only testing.",
     ],
   },
   {
@@ -273,7 +274,7 @@ function App() {
                 </li>
                 <li>
                   <BriefcaseBusiness size={16} />
-                  <span>OCI Compute VMI</span>
+                  <span>OCI Compute Infrastructure</span>
                 </li>
                 <li>
                   <GraduationCap size={16} />
