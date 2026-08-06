@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Example coding-agent evaluation result</title>
+  <desc id="desc">Terminal-style view showing three failed criteria, one passed criterion, and a score of 25 out of 100.</desc>
+  <rect width="1280" height="640" rx="28" fill="#0d1117"/>
+  <rect x="0" y="0" width="1280" height="68" rx="28" fill="#161b22"/>
+  <circle cx="38" cy="34" r="10" fill="#ff7b72"/>
+  <circle cx="72" cy="34" r="10" fill="#d29922"/>
+  <circle cx="106" cy="34" r="10" fill="#3fb950"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="26" fill="#c9d1d9">
+    <text x="52" y="125" fill="#8b949e">$ agent-eval grade retry-queue --workspace workspaces/retry-queue</text>
+    <text x="52" y="180">Task: retry-queue</text>
+    <text x="52" y="222">Runner: local</text>
+    <text x="52" y="274">Criteria:</text>
+    <text x="82" y="322" fill="#f85149">FAIL</text><text x="170" y="322">0/25  duplicate enqueue preserves the original task</text>
+    <text x="82" y="370" fill="#f85149">FAIL</text><text x="170" y="370">0/25  expired leases can be retried with a new attempt</text>
+    <text x="82" y="418" fill="#f85149">FAIL</text><text x="170" y="418">0/25  exhausted tasks move to the dead-letter set</text>
+    <text x="82" y="466" fill="#3fb950">PASS</text><text x="170" y="466">25/25 acknowledged tasks are never delivered again</text>
+    <text x="52" y="530" font-size="34" font-weight="700">Score: <tspan fill="#d29922">25/100</tspan></text>
+    <text x="52" y="580" font-size="21" fill="#8b949e">Each criterion runs independently and contributes explicit weighted credit.</text>
+  </g>
+</svg>

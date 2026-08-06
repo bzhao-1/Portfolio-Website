@@ -115,6 +115,18 @@ const experiences: ExperienceItem[] = [
 
 const projects: ProjectItem[] = [
   {
+    title: "Coding-Agent Evaluation Harness",
+    category: "Developer Tooling",
+    image: withBase("/img/agent-eval-harness.svg"),
+    imageAlt: "Weighted grading output from the coding-agent evaluation harness",
+    summary:
+      "Built a deterministic, rubric-based harness for repository-repair tasks with isolated grader subprocesses, optional network-disabled Docker execution, weighted criteria, and reproducible result hashes.",
+    links: [
+      { label: "Repository", href: "https://github.com/bzhao-1/coding-agent-eval-harness" },
+      { label: "Failure Modes", href: "https://github.com/bzhao-1/coding-agent-eval-harness/blob/main/docs/FAILURE_MODES.md" },
+    ],
+  },
+  {
     title: "Computer Vision for Autonomous Driving",
     category: "Systems Research",
     image: withBase("/img/video_77_clear_day.gif"),
