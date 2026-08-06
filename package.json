@@ -6,20 +6,29 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "check": "tsc --noEmit",
     "preview": "vite preview"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bzhao-1/Portfolio-Website.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "portfolio",
+    "react",
+    "typescript",
+    "vite"
+  ],
+  "author": "Ben Zhao",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/bzhao-1/Portfolio-Website/issues"
   },
-  "homepage": "https://github.com/bzhao-1/Portfolio-Website#readme",
-  "description": "Modern React + TypeScript portfolio for Ben Zhao",
+  "homepage": "https://zehoubenzhao.com/",
+  "description": "Source for Ben Zhao's engineering portfolio and project case studies",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "dependencies": {
     "lucide-react": "^1.12.0",
     "react": "^19.2.5",

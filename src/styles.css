@@ -68,11 +68,10 @@ img {
   display: flex;
   gap: 18px;
   justify-content: space-between;
-  left: 50%;
+  margin: 20px auto 0;
   padding: 14px 20px;
   position: sticky;
   top: 20px;
-  transform: translateX(-50%);
   width: min(1120px, calc(100% - 28px));
   z-index: 20;
 }

@@ -124,7 +124,7 @@ const projects: ProjectItem[] = [
     links: [
       { label: "Case Study", href: withBase("/projects/CV4AD.pdf") },
       { label: "Project Site", href: "https://www.cs.carleton.edu/cs_comps/2425/tamert/cv4ad_website/index.html" },
-      { label: "Repository", href: "https://github.com/Carleton-Comps-CV4AD" },
+      { label: "Repository", href: "https://github.com/bzhao-1/carla-weather-segmentation" },
     ],
   },
   {
@@ -148,7 +148,6 @@ const projects: ProjectItem[] = [
       "Built Python data automation for 300+ instrument inventories, replacing manual tracking with structured operational workflows for research teams.",
     links: [
       { label: "Case Study", href: withBase("/projects/Frontage.pdf") },
-      { label: "Repository", href: "https://github.com/bzhao-1/Inventory-Data-Management-System" },
     ],
   },
   {
