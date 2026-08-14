@@ -39,7 +39,7 @@ const navItems = [
 ];
 
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
-const resumeHref = withBase("/resume/resume.pdf?v=20260714");
+const resumeHref = withBase("/resume/resume.pdf?v=20260810");
 
 const experiences: ExperienceItem[] = [
   {
